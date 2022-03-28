@@ -55,8 +55,8 @@ checkstyle {
 }
 
 java {
-    targetCompatibility = JavaVersion.VERSION_1_8
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_11
 
     withJavadocJar()
     withSourcesJar()
@@ -115,14 +115,14 @@ val integrationTest = task<Test>("integrationTest") {
     }
     systemProperty("tests.security.manager", "false")
     // Basic auth settings for integration test
-    systemProperty("https", System.getProperty("https", "true"))
+    systemProperty("https", System.getProperty("https", "false"))
     systemProperty("user", System.getProperty("user", "admin"))
     systemProperty("password", System.getProperty("password", "admin"))
 }
 
 dependencies {
 
-    val opensearchVersion = "1.2.4"
+    val opensearchVersion = "2.0.0-SNAPSHOT"
     val jacksonVersion = "2.12.6"
 
     // Apache 2.0
