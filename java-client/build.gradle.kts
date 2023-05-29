@@ -51,7 +51,7 @@ plugins {
     `java-library`
     checkstyle
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "2.2"
+    id("com.github.jk1.dependency-license-report") version "2.3"
 }
 apply(plugin = "opensearch.repositories")
 
