@@ -24,6 +24,7 @@ jobs:
         run: |
           TAG=$(echo "${GITHUB_REF#refs/*/}")
           CURRENT_VERSION_ARRAY=($(echo "$TAG" | tr . '\n'))
+          CURRENT_VERSION_ARRAY[0]=$((CURRENT_VERSION_ARRAY[0]//v))
           BASE_X=$(IFS=. ; echo "${CURRENT_VERSION_ARRAY[*]:0:1}.x")
           CURRENT_VERSION=$(IFS=. ; echo "${CURRENT_VERSION_ARRAY[*]:0:3}")
           CURRENT_VERSION_ARRAY[1]=$((CURRENT_VERSION_ARRAY[1]+1))
